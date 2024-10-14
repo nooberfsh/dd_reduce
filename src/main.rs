@@ -17,8 +17,10 @@ use timely::dataflow::ProbeHandle;
 use timely::progress::frontier::AntichainRef;
 use timely::Config;
 
-use crate::util::trace_to_vec_val_trace;
+use crate::min_max::*;
+use crate::util::*;
 
+#[macro_export]
 macro_rules! sync {
     ($input:expr, $probe:expr, $worker:expr) => {{
         let time = $input.time().clone() + 1;
@@ -36,7 +38,9 @@ fn main() {
     differential_dataflow::configure(&mut td_config.worker, &dd_config);
     //count_shape(td_config);
     //sum_naive(td_config);
-    sum_explode(td_config);
+    //sum_explode(td_config);
+    //min_naive(td_config);
+    min_explode(td_config);
 }
 
 // 最 naive 的使用方式, 随着单个 key 的 value 数量增加, reduce 会越来约慢, 因为每次计算的数量都在增加.
@@ -87,6 +91,7 @@ pub fn sum_naive(config: Config) {
 // 但是 sum_naive 的计算中的只需要求一个 sum, 不需要区分 distinct value, sum_explode 把 value 通过 `explode` 挪到 (K, V, T, Diff) 中
 // Diff, 利用 arrangement 自动合并相同 (K, V, T) 的 Diff 机制, 把 所有 distinct value 合并到少数几个 value,
 // 新的 value 的数量取决于需要维护的 Time 数量, 如果 Time 数量始终保持最新的话, 那 value 的数量只会是 一个.
+// TODO: 这里没有无法区 value = 0 / diff = 0 的情况
 pub fn sum_explode(config: Config) {
     timely::execute(config, move |worker| {
         let mut probe = ProbeHandle::new();
