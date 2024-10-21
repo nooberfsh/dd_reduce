@@ -9,7 +9,7 @@ timely = {git="https://github.com/TimelyDataflow/timely-dataflow"}
 serde = {version = "1.0.210", features = ["derive"]}
 itertools = "0.13.0"
 random-fast-rng = "0.1"
-timelyext = {path = "/home/tom/hdx/projects/timelyext"}
+timelyext = {git = "https://github.com/nooberfsh/timelyext"}
 
 [target.'cfg(not(target_env = "msvc"))'.dependencies]
 tikv-jemallocator = "0.6"
