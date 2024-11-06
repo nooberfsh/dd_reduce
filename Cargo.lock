@@ -35,7 +35,8 @@ checksum = "baf1de4339761588bc0619e3cbc0120ee582ebb74b53b4efbf79117bd2da40fd"
 [[package]]
 name = "columnation"
 version = "0.1.0"
-source = "git+https://github.com/frankmcsherry/columnation#ab3b78974bf87bad7c166771452126ff50738548"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "21ca68e419cae36821f2e1c9d62a25de900aad72e96b79c6f76eb47c65816d25"
 dependencies = [
  "paste",
 ]
@@ -70,8 +71,9 @@ dependencies = [
 
 [[package]]
 name = "differential-dataflow"
-version = "0.12.0"
-source = "git+https://github.com/TimelyDataflow/differential-dataflow#b5046c8ccbd49587a604adeea8da48a1599888fa"
+version = "0.13.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "4f5ad19c6ddddedba008bf9626348810ff5171de9cad62406cd4e9ea291fa8d1"
 dependencies = [
  "fnv",
  "serde",
@@ -232,8 +234,9 @@ dependencies = [
 
 [[package]]
 name = "timely"
-version = "0.12.0"
-source = "git+https://github.com/TimelyDataflow/timely-dataflow#2f32359e8b8bc217213bbe76d5c12969f522c54f"
+version = "0.13.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "81b6f390cec7160992fd8502fe02064a0f52dcfd2978544f4999f18664b709aa"
 dependencies = [
  "bincode",
  "crossbeam-channel",
@@ -249,12 +252,14 @@ dependencies = [
 [[package]]
 name = "timely_bytes"
 version = "0.12.0"
-source = "git+https://github.com/TimelyDataflow/timely-dataflow#2f32359e8b8bc217213bbe76d5c12969f522c54f"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1f8a545b35b019b8b63afb913214695f542cbbf39032c7b7349e1a15b7f2a2cf"
 
 [[package]]
 name = "timely_communication"
-version = "0.12.0"
-source = "git+https://github.com/TimelyDataflow/timely-dataflow#2f32359e8b8bc217213bbe76d5c12969f522c54f"
+version = "0.13.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "22d602b340fd8d5d4128660a577f7886070098b860dc9a9aa46512a2e0d683b4"
 dependencies = [
  "bincode",
  "byteorder",
@@ -268,7 +273,8 @@ dependencies = [
 [[package]]
 name = "timely_container"
 version = "0.12.0"
-source = "git+https://github.com/TimelyDataflow/timely-dataflow#2f32359e8b8bc217213bbe76d5c12969f522c54f"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "2ddfa4639c9390c6fac4ff66e47aa1bcfbc5f5bba6d520d5a7c55978165e7b14"
 dependencies = [
  "columnation",
  "flatcontainer",
@@ -277,12 +283,14 @@ dependencies = [
 
 [[package]]
 name = "timely_logging"
-version = "0.12.0"
-source = "git+https://github.com/TimelyDataflow/timely-dataflow#2f32359e8b8bc217213bbe76d5c12969f522c54f"
+version = "0.12.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b73a034d62792b507397701ee660001c8ba3e9dbffce29bc7a25319a36ebaa86"
 
 [[package]]
 name = "timelyext"
 version = "0.1.0"
+source = "git+https://github.com/nooberfsh/timelyext#ac26f6aadda9be9ca0c46679408fc9c54df71319"
 dependencies = [
  "differential-dataflow",
  "timely",
